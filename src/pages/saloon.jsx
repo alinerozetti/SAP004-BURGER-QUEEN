@@ -39,6 +39,7 @@ class Saloon extends Component {
     total: 0,
     nome: "",
     mesa: 0,
+    blinkButton: "",
   };
   
   initialState = {
@@ -46,6 +47,7 @@ class Saloon extends Component {
     total: 0,
     nome: "",
     mesa: 0,
+    blinkButton: "",
   };
   
   listenerFirebase = () => {
