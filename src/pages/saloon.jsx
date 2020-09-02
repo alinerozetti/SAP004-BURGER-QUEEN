@@ -55,13 +55,12 @@ class Saloon extends Component {
     .collection("Orders")
     .where('status', '==', 'pronto')
     .onSnapshot(snapshot => {
-      snapshot.docChanges().forEach(change => {
-        if(!snapshot.size == 0) {
-          this.setState({blinkButton: "blink"});
-        }else {
-          document.setState({blinkButton: ""});
-        }
-      })
+
+      if(!snapshot.size == 0) {
+        this.setState({ blinkButton: "blink"});
+      }else {
+        this.setState({ blinkButton: ""});
+      }
     });
   }
   
@@ -230,7 +229,7 @@ class Saloon extends Component {
             <Table
               pedido={this.state.pedido}
               remove={this.remove}
-              total={this.state.total}
+              total={this.state.total} 
             />
             <BtnSaloon
               className="btnSaloon btnTest"
@@ -238,7 +237,9 @@ class Saloon extends Component {
               onClick={this.submitOrders}
             />
             <a href="/orders">
+
             <BtnSaloon className={`btnSaloon btnTest btnOrders ${this.state.blinkButton}`}text="Pedidos Prontos"></BtnSaloon>
+
             </a>
           </div>
         </section>
